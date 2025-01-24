@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Metadata Scraper API",
+    "version": "1.0.0",
+    "description": "API to fetch metadata from a URL"
+  },
+  "paths": {
+    "/api/metadata": {
+      "get": {
+        "summary": "Fetch metadata from a given URL",
+        "description": "This endpoint takes a URL and fetches metadata such as title, description, image, and URL. It returns the metadata in JSON format.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "https://example.com"
+            },
+            "description": "The URL of the page from which to fetch metadata."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "example": "Example Domain"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "This domain is for use in illustrative examples in documents."
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "https://www.example.com/image.jpg"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://www.example.com"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing URL parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid or missing URL parameter"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to fetch metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Failed to fetch metadata"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "metafetch-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start",
+    "generate-docs": "node api/docs.js"
+  },
+  "author": "klaudiadev",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sparticuz/chromium": "^131.0.1",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2",
+    "puppeteer": "22.13.1",
+    "puppeteer-core": "^10.4.0",
+    "sharp": "^0.33.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-dist": "^5.18.2",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
